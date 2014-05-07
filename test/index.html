@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ink embed</title>
+</head>
+<body>
+    <h3>ink-embed</h3>
+    <div id="holder" data-url="http://videos.sapo.pt/vz0UeKVkl92vQ2bDhIYl" data-width="640" data-height="480"></div>
+
+    <script src="../bower_components/Ink/dist/js/ink.js"></script>
+    <script src="../ink.embed.js"></script>
+
+    <script>
+        Ink.requireModules(['Ink.Ext.Embed_1'], function (Embed) {
+            var emb = new Embed(document.getElementById('holder'));
+        });
+    </script>
+</body>
+</html>

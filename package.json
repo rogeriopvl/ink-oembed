@@ -1,0 +1,16 @@
+{
+  "name": "ink-embed",
+  "version": "0.0.0",
+  "description": "Ink module for embedding stuff",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ink"
+  ],
+  "author": "rogeriopvl",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.6.2"
+  }
+}

@@ -21,3 +21,13 @@ Soon...
     });
 
 And here's a JSBin example for you to play: http://jsbin.com/jakanodo/3/edit
+
+## API
+
+`OEmbed(element, opts)`
+
+* `element` the container element where the resource will be emebeded
+* `opts` (hash)
+  *  `endpoint` (string) the OEmbed provider endpoint
+
+If no `opts` is passed, ink-oembed will try to match the `data-url` with [Sapo Videos](http://videos.sapo.pt). If it does not match it will use the http://embed.ly service.

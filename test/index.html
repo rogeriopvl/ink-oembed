@@ -13,7 +13,8 @@
 
     <script>
         Ink.requireModules(['Ink.Ext.OEmbed_1'], function (OEmbed) {
-            var emb = new OEmbed(document.getElementById('holder'));
+            var holder = document.getElementById('holder');
+            var emb = new OEmbed(holder);
         });
     </script>
 </body>

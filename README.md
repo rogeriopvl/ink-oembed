@@ -1,8 +1,8 @@
-# ink-embed
+# ink-oembed
 
-ink-embed is currently a work in progress.
+ink-oembed is currently a work in progress.
 
-Ink plugin to embed stuf. For now it only supports embedding of videos from Sapo Vídeos.
+Ink plugin to embed stuff using the oembed spec.
 
 ## Install
 
@@ -16,8 +16,8 @@ Soon...
 
 #### Javascript
 
-    Ink.requireModules(['Ink.Ext.Embed_1'], function (Embed) {
-        var emb = new Embed(document.getElementById('container'));
+    Ink.requireModules(['Ink.Ext.OEmbed_1'], function (OEmbed) {
+        var emb = new OEmbed(document.getElementById('container'));
     });
 
 And here's a JSBin example for you to play: http://jsbin.com/jakanodo/1/edit

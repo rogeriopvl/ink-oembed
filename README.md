@@ -20,4 +20,4 @@ Soon...
         var emb = new OEmbed(document.getElementById('container'));
     });
 
-And here's a JSBin example for you to play: http://jsbin.com/jakanodo/1/edit
+And here's a JSBin example for you to play: http://jsbin.com/jakanodo/3/edit

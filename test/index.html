@@ -3,18 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>ink oembed</title>
+
+    <style>
+        #holder2 {
+            width: 600px;
+        }
+    </style>
 </head>
 <body>
-    <h3>ink-oembed</h3>
-    <div id="holder" data-url="http://videos.sapo.pt/vz0UeKVkl92vQ2bDhIYl" data-width="640" data-height="480"></div>
+    <h1>ink-oembed</h1>
+
+    <h3>Video from <a href="http://videos.sapo.pt">Sapo Videos</a></h3>
+    <div id="holder1" data-url="http://videos.sapo.pt/vz0UeKVkl92vQ2bDhIYl" data-width="640" data-height="480"></div>
+
+    <h3>Image from <a href="flickr.com">Flickr</a></h3>
+    <div>
+        <img id="holder2" data-url="https://www.flickr.com/photos/azuaje/5282865643/in/photolist-2tgZKZ-mEbFUA-cVb84b-awbaV8-93QoY2-9bWVqZ-hS4ytM-ku1kL-fKQEgv-8iqC1-49LRbA-8NmH3-dcKBp8-6JJX5a-7xC6iV-7kRB7D-ejKCb5-93Q98g-8NmGQ-dA92Hf-8jifd-65HFE9-h2CW8t-93Q4Up-9KGkWk-eJUx1J-5FjyYg-7nANQm-2t17os-7wmH7a-4ttRiW-4db7VY-7ksSun-93Q8Vg-khPfnk-dA93e7-6DBBpd-5LdaSn-748Hxy-h6wwH9-dC8ytH-eU9Y8x-eUa74M-eUmxSL-eUmtYS-5MmMJT-eUmk1m-7kXhmx-93Qbie-jeumdd" src="" alt="Bodyboard">
+    </div>
 
     <script src="../bower_components/Ink/dist/js/ink.js"></script>
     <script src="../ink.oembed.js"></script>
 
     <script>
         Ink.requireModules(['Ink.Ext.OEmbed_1'], function (OEmbed) {
-            var holder = document.getElementById('holder');
-            var emb = new OEmbed(holder);
+            new OEmbed(document.getElementById('holder1'));
+            new OEmbed(document.getElementById('holder2'));
         });
     </script>
 </body>

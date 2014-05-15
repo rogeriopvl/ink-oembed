@@ -6,7 +6,7 @@ Ink plugin to embed stuff using the oembed spec.
 
 ## Install
 
-Soon...
+    bower install ink-oembed
 
 ## Usage
 

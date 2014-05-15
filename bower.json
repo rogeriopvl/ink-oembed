@@ -1,0 +1,25 @@
+{
+  "name": "ink-oembed",
+  "version": "0.0.1",
+  "homepage": "https://github.com/rogeriopvl/ink-oembed",
+  "authors": [
+    "rogeriopvl <rogeriopvl@gmail.com>"
+  ],
+  "description": "Ink plugin for OEmbed",
+  "main": "ink.oembed.js",
+  "keywords": [
+    "ink",
+    "oembed",
+    "inksapo",
+    "sapo",
+    "inkjs"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "package.json"
+  ]
+}

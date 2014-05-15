@@ -53,5 +53,6 @@ And here's a JSBin example for you to play: http://jsbin.com/jakanodo/3/edit
 * `element` the container element where the resource will be emebeded
 * `opts` (hash)
   *  `endpoint` (string) the OEmbed provider endpoint
+  *  `callback` (function) a callback to get the OEmbed response data
 
 If no `opts` is passed, ink-oembed will try to match the `data-url` with [Sapo Videos](http://videos.sapo.pt). If it does not match it will use the http://embed.ly service.

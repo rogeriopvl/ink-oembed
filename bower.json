@@ -21,5 +21,8 @@
     "bower_components",
     "test",
     "package.json"
-  ]
+  ],
+  "dependencies": {
+    "Ink": "~3.0.0"
+  }
 }

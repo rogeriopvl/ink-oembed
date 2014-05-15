@@ -1,6 +1,6 @@
 {
   "name": "ink-oembed",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": "Ink module for embedding stuff with oembed",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,8 +9,5 @@
     "ink"
   ],
   "author": "rogeriopvl",
-  "license": "MIT",
-  "devDependencies": {
-    "gulp": "^3.6.2"
-  }
+  "license": "MIT
 }

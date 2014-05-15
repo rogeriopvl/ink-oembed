@@ -1,6 +1,6 @@
 {
   "name": "ink-oembed",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/rogeriopvl/ink-oembed",
   "authors": [
     "rogeriopvl <rogeriopvl@gmail.com>"
@@ -12,7 +12,8 @@
     "oembed",
     "inksapo",
     "sapo",
-    "inkjs"
+    "inkjs",
+    "inkplugin"
   ],
   "license": "MIT",
   "ignore": [

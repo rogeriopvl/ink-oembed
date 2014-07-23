@@ -3,6 +3,14 @@ Ink.createExt('OEmbed', 1, ['Ink.Net.Ajax_1', 'Ink.Dom.Element_1'],
 
     'use strict';
 
+    var defaultFallback = 'http://api.embed.ly/v1/api/oembed';
+    var providers = {
+        sapovideos: { 
+            regex: /videos\.sapo\.pt/,
+            endpoint: 'http://videos.sapo.pt/oembed' 
+        }
+    };
+
     /**
      * Tries to find the right provider based on given URL
      *
@@ -10,17 +18,16 @@ Ink.createExt('OEmbed', 1, ['Ink.Net.Ajax_1', 'Ink.Dom.Element_1'],
      *
      * @return {string} the url of the adequate provider for given URL
      */
-    var getProvider = function (url) {
-        var providers = {
-            embedly: 'http://api.embed.ly/v1/api/oembed',
-            sapovideos: 'http://videos.sapo.pt/oembed'
-        };
+    var getProvider = function (url, fallbackUrl) {
+        for(var provider in providers){
+            if(!providers.hasOwnProperty(provider)){ continue; }
 
-        if (/videos\.sapo\.pt/.test(url)) {
-            return providers.sapovideos;
-        } else {
-            return providers.embedly;
+            if (providers.sapovideos.regex.test(url)) {
+                return providers.sapovideos.endpoint;
+            }
         }
+
+        return fallbackUrl;
     };
 
     /**
@@ -33,7 +40,7 @@ Ink.createExt('OEmbed', 1, ['Ink.Net.Ajax_1', 'Ink.Dom.Element_1'],
         this.holder = holder;
         this.holderData = InkElement.data(this.holder);
         this.opts = opts || {};
-        this.opts.endpoint = this.opts.endpoint || getProvider(this.holderData.url);
+        this.opts.endpoint = this.opts.endpoint || getProvider(this.holderData.url, defaultFallback);
 
         this._init();
     };

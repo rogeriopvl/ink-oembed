@@ -75,12 +75,10 @@ Ink.createExt('OEmbed', 1, ['Ink.Net.Ajax_1', 'Ink.Dom.Element_1'],
         _init: function () {
             var that = this;
             this._fetch(this.opts.endpoint, function (data) {
-                if (data.type === 'rich' || data.type === 'video') {
-                    that.holder.innerHTML = data.html;
-                } else if (data.type === 'photo') {
-                    that.holder.src = data.url;
-                } else {
-                    // TODO
+                switch(data.type){
+                    case 'rich': case 'video': that.holder.innerHTML = data.html; break;
+                    case 'photo': that.holder.src = data.url; break;
+                    default: case 'link': break; // TODO
                 }
 
                 if (typeof that.opts.callback === 'function') {

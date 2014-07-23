@@ -45,6 +45,31 @@ Ink.createExt('OEmbed', 1, ['Ink.Net.Ajax_1', 'Ink.Dom.Element_1'],
         this._init();
     };
 
+    var toString = ({}).toString;
+    var isProviderConfig = function(o){
+        return o && typeof o === 'object' && 
+            typeof o.name === 'string' && 
+            toString.call(o.regex) === '[object RegExp]' && 
+            typeof o.endpoint === 'string';
+    }
+
+    OEmbed.addProvider = function(providerConfig){
+        if (!isProviderConfig(providerConfig)) { return; }
+
+        providers[providerConfig.name] = {
+            regex: providerConfig.regex,
+            endpoint: providerConfig.endpoint
+        }
+    };
+
+    OEmbed.addProviders = function(providerConfigArray){
+        if(!toString.call(providerConfigArray) === '[object Array]'){ return; }
+
+        for(var i = 0, iLen = providerConfigArray.length; i < iLen; i++){
+            OEmbed.addProvider(providerConfigArray[i]);
+        }
+    };
+
     OEmbed.prototype = {
         _init: function () {
             var that = this;

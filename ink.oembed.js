@@ -86,7 +86,7 @@ Ink.createExt('OEmbed', 1, ['Ink.Net.Ajax_1', 'Ink.Dom.Element_1'],
                 switch(data.type){
                     case 'rich': case 'video': that.holder.innerHTML = data.html; break;
                     case 'photo': that.holder.src = data.url; break;
-                    default: case 'link': break; // TODO
+                    default: case 'link': case 'error': break; // TODO: error is embedly specific, link is oembed standard
                 }
 
                 if (typeof that.opts.callback === 'function') {

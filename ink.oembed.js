@@ -3,7 +3,6 @@ Ink.createExt('OEmbed', 1, ['Ink.Net.Ajax_1', 'Ink.Dom.Element_1'],
 
     'use strict';
 
-    var console = window.console || { error: function(){} };
     var defaultFallback = 'http://api.embed.ly/v1/api/oembed';
     var providers = {
         sapovideos: { 
@@ -57,7 +56,7 @@ Ink.createExt('OEmbed', 1, ['Ink.Net.Ajax_1', 'Ink.Dom.Element_1'],
 
     OEmbed.addProvider = function(providerConfig){
         if (!isProviderConfig(providerConfig)) { 
-            console.error('Ink.OEmbed: addProvider expects a valid providerConfig object as it\'s argument.');
+            Ink.error('Ink.OEmbed: addProvider expects a valid providerConfig object as it\'s argument.');
 
             return; 
         }
@@ -70,7 +69,7 @@ Ink.createExt('OEmbed', 1, ['Ink.Net.Ajax_1', 'Ink.Dom.Element_1'],
 
     OEmbed.addProviders = function(providerConfigArray){
         if(!toString.call(providerConfigArray) === '[object Array]'){ 
-            console.error('Ink.OEmbed: addProviders expects an array of providerConfigs as it\'s argument.');
+            Ink.error('Ink.OEmbed: addProviders expects an array of providerConfigs as it\'s argument.');
 
             return;
         }

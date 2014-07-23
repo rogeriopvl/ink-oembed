@@ -40,7 +40,8 @@ Ink.createExt('OEmbed', 1, ['Ink.Net.Ajax_1', 'Ink.Dom.Element_1'],
         this.holder = holder;
         this.holderData = InkElement.data(this.holder);
         this.opts = opts || {};
-        this.opts.endpoint = this.opts.endpoint || getProvider(this.holderData.url, defaultFallback);
+        this.opts.fallbackUrl = typeof this.opts.fallbackUrl === 'string' ? this.opts.fallbackUrl : defaultFallback;
+        this.opts.endpoint = this.opts.endpoint || getProvider(this.holderData.url, this.opts.fallbackUrl);
 
         this._init();
     };

@@ -33,6 +33,13 @@ Ink.createExt('OEmbed', 1, ['Ink.Net.Ajax_1', 'Ink.Dom.Element_1'],
     /**
      * @constructor
      *
+     * Example opts object:
+     *     {
+     *         fallbackUrl: 'http://my.fallback.url/oembed', // optional
+     *         endpoint: 'http://my.endpoint.url/oembed', // optional
+     *         callback: function(jason){ console.log(jason); } // optional
+     *     }
+     * 
      * @param {object} holder - the DOM element that will contain the embed
      * @param {object} opts - a hash containing oembed configuration options
      */

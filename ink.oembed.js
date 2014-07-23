@@ -47,13 +47,29 @@ Ink.createExt('OEmbed', 1, ['Ink.Net.Ajax_1', 'Ink.Dom.Element_1'],
     };
 
     var toString = ({}).toString;
-    var isProviderConfig = function(o){
+    // we could make this more robust by actually checking the format 
+    // of the data being passed in, but for now make it a simple structural check
+    var isProviderConfig = function(o){ 
         return o && typeof o === 'object' && 
             typeof o.name === 'string' && 
             toString.call(o.regex) === '[object RegExp]' && 
             typeof o.endpoint === 'string';
     }
 
+    /**
+     * OEmbed.addProvider
+     *
+     * add a provider to OEmbed's list of providers
+     *
+     * Example providerConfig object:
+     *     {
+     *         name: 'myProviderName',
+     *         regex: /the regex that identifies this provider/,
+     *         endpoint: 'http://my.provider.url/oembed'
+     *     }
+     * 
+     * @param {Object} providerConfig The configuration object for the new provider
+     */
     OEmbed.addProvider = function(providerConfig){
         if (!isProviderConfig(providerConfig)) { 
             Ink.error('Ink.OEmbed: addProvider expects a valid providerConfig object as it\'s argument.');
@@ -67,6 +83,20 @@ Ink.createExt('OEmbed', 1, ['Ink.Net.Ajax_1', 'Ink.Dom.Element_1'],
         }
     };
 
+    /**
+     * OEmbed.addProviders
+     *
+     * add various providers to OEmbed's list of providers
+     * 
+     * Example providerConfig object:
+     *     {
+     *         name: 'myProviderName',
+     *         regex: /the regex that identifies this provider/,
+     *         endpoint: 'http://my.provider.url/oembed'
+     *     }
+     * 
+     * @param {Array} providerConfigArray The configuration objects for each new provider
+     */
     OEmbed.addProviders = function(providerConfigArray){
         if(!toString.call(providerConfigArray) === '[object Array]'){ 
             Ink.error('Ink.OEmbed: addProviders expects an array of providerConfigs as it\'s argument.');

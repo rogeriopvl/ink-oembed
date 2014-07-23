@@ -22,8 +22,8 @@ Ink.createExt('OEmbed', 1, ['Ink.Net.Ajax_1', 'Ink.Dom.Element_1'],
         for(var provider in providers){
             if(!providers.hasOwnProperty(provider)){ continue; }
 
-            if (providers.sapovideos.regex.test(url)) {
-                return providers.sapovideos.endpoint;
+            if (providers[provider].regex.test(url)) {
+                return providers[provider].endpoint;
             }
         }
 

@@ -19,8 +19,8 @@ Ink.createExt('OEmbed', 1, ['Ink.Net.Ajax_1', 'Ink.Dom.Element_1'],
      * @return {string} the url of the adequate provider for given URL
      */
     var getProvider = function (url, fallbackUrl) {
-        for(var provider in providers){
-            if(!providers.hasOwnProperty(provider)){ continue; }
+        for (var provider in providers) {
+            if (!providers.hasOwnProperty(provider)) { continue; }
 
             if (providers[provider].regex.test(url)) {
                 return providers[provider].endpoint;
@@ -37,7 +37,7 @@ Ink.createExt('OEmbed', 1, ['Ink.Net.Ajax_1', 'Ink.Dom.Element_1'],
      *     {
      *         fallbackUrl: 'http://my.fallback.url/oembed', // optional
      *         endpoint: 'http://my.endpoint.url/oembed', // optional
-     *         callback: function(jason){ console.log(jason); } // optional
+     *         callback: function(jason) { console.log(jason); } // optional
      *     }
      *
      * @param {object} holder - the DOM element that will contain the embed
@@ -58,12 +58,12 @@ Ink.createExt('OEmbed', 1, ['Ink.Net.Ajax_1', 'Ink.Dom.Element_1'],
     var toString = ({}).toString;
     // we could make this more robust by actually checking the format
     // of the data being passed in, but for now make it a simple structural check
-    var isProviderConfig = function(o){
+    var isProviderConfig = function(o) {
         return o && typeof o === 'object' &&
             typeof o.name === 'string' &&
             toString.call(o.regex) === '[object RegExp]' &&
             typeof o.endpoint === 'string';
-    }
+    };
 
     /**
      * OEmbed.addProvider
@@ -79,7 +79,7 @@ Ink.createExt('OEmbed', 1, ['Ink.Net.Ajax_1', 'Ink.Dom.Element_1'],
      *
      * @param {Object} providerConfig The configuration object for the new provider
      */
-    OEmbed.addProvider = function(providerConfig){
+    OEmbed.addProvider = function(providerConfig) {
         if (!isProviderConfig(providerConfig)) {
             Ink.error('Ink.OEmbed: addProvider expects a valid providerConfig object as it\'s argument.');
 
@@ -89,7 +89,7 @@ Ink.createExt('OEmbed', 1, ['Ink.Net.Ajax_1', 'Ink.Dom.Element_1'],
         providers[providerConfig.name] = {
             regex: providerConfig.regex,
             endpoint: providerConfig.endpoint
-        }
+        };
     };
 
     /**
@@ -107,13 +107,13 @@ Ink.createExt('OEmbed', 1, ['Ink.Net.Ajax_1', 'Ink.Dom.Element_1'],
      * @param {Array} providerConfigArray The configuration objects for each new provider
      */
     OEmbed.addProviders = function(providerConfigArray) {
-        if(!toString.call(providerConfigArray) === '[object Array]') {
+        if (!toString.call(providerConfigArray) === '[object Array]') {
             Ink.error('Ink.OEmbed: addProviders expects an array of providerConfigs as it\'s argument.');
 
             return;
         }
 
-        for(var i = 0, iLen = providerConfigArray.length; i < iLen; i++) {
+        for (var i = 0, iLen = providerConfigArray.length; i < iLen; i++) {
             OEmbed.addProvider(providerConfigArray[i]);
         }
     };

@@ -3,11 +3,11 @@ Ink.createExt('OEmbed', 1, ['Ink.Net.Ajax_1', 'Ink.Dom.Element_1'],
 
     'use strict';
 
-    var defaultFallback = 'http://api.embed.ly/v1/api/oembed';
+    var defaultFallback = 'https://api.embed.ly/v1/api/oembed';
     var providers = {
         sapovideos: {
             regex: /videos\.sapo\.pt/,
-            endpoint: 'http://videos.sapo.pt/oembed'
+            endpoint: 'https://videos.sapo.pt/oembed'
         }
     };
 

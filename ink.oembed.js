@@ -7,7 +7,7 @@ Ink.createExt('OEmbed', 1, ['Ink.Net.Ajax_1', 'Ink.Dom.Element_1'],
     var providers = {
         sapovideos: {
             regex: /videos\.sapo\.pt/,
-            endpoint: 'https://videos.sapo.pt/oembed'
+            endpoint: 'https://rd3.videos.sapo.pt/oembed'
         }
     };
 

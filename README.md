@@ -1,5 +1,7 @@
 # ink-oembed
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/rogeriopvl/ink-oembed.svg)](https://greenkeeper.io/)
+
 ink-oembed is currently a work in progress.
 
 Ink plugin to embed stuff using the oembed spec.
